@@ -1,3 +1,5 @@
+import { SignatureKind } from "typescript";
+
 function exibirAluno(nomeAluno:string, idadeAluno:number, estaMatriculado:boolean):void{
     console.log(`o aluni ${nomeAluno} tem ${idadeAluno} esta matriculado: ${estaMatriculado}`)
 }
@@ -85,17 +87,15 @@ personagens.forEach((nome, indice) => {
 })
 
 
-const sociedade: string[] = ['Frodo', 'Sam', 'Gandalf', 'Legolas', 'Gimli', 'Merry', 'Pipin', 'Aragorn', 'Boromir'];
-const hobbits: string[] = ['Frodo', 'Sam', 'Merry', 'Pipin'];
 
-for (let i = 0; i < sociedade.length; i++) {
-    for (let j = 0; j < hobbits.length; j++) {
-        if (sociedade[i] === hobbits[j]) {
-            console.log(`${sociedade[i]}`);
-        }
+// EXERCICIOS 
+const sociedade: string[] = ['Frodo', 'Sam', 'Gandalf', 'Legolas', 'Gimli', 'Merry', 'Pipin', 'Aragorn', 'Boromir'];
+
+for(let i = 0; i < sociedade.length; i++){
+    if(sociedade[i] === 'Frodo' || sociedade[i] === 'Sam' || sociedade[i] === 'Merry' || sociedade[i] === 'Merry' || sociedade[i] === 'Pippin'){
+        console.log(`Hobbit encontrado: ${sociedade[i]}`)
     }
 }
-
 
 
 const personagensStar = [
@@ -118,3 +118,44 @@ const personagensStar = [
     Sakura: 'Haruno',
     Kakashi: 'Hatake'
   };
+
+  for (const character in personagensNaruto) {
+    console.log(`${character}: ${personagensNaruto[character as keyof typeof personagensNaruto]}`)
+}
+
+
+const personagensDBZ = [
+    { nome: 'Goku', poder: 15000 },
+    { nome: 'Vegeta', poder: 14999 },
+    { nome: 'Krillin', poder: 7500 },
+    { nome: 'Freeza', poder: 20000 },
+  ];
+  
+  personagensDBZ.forEach(({ nome, poder }) => {
+    if (poder > 8000) {
+      console.log(`O poder de ${nome} é de mais de 8000!`);
+    }
+  });
+  
+
+  const pokemons:string[] = ['Pikachu', 'Charmander', 'Bulbasaur', 'Mewtwo', 'Squirtle'];
+let contador = 0
+  while(contador < pokemons.length){
+    if(pokemons[contador] === 'Mewtwo'){
+        console.log("Pokemon lendario encontrado: mewtwo!")
+        break
+    }
+    console.log(`Caputrando ${pokemons[contador]}`)
+    contador++
+  }
+
+
+  let passos = 0
+  const passosParaMordor = 5
+
+  do {
+    console.log(`Dando passo ${passos}`)
+    passos++
+  } while(passos < passosParaMordor) {
+    console.log('Chegamos em Mordor!')
+  }
