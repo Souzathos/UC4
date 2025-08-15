@@ -4,6 +4,7 @@ export class Monstro {
     private nome:string
     private vida:number
     private forca:number
+    
 
     constructor(nome:string, vida:number, forca:number) {
         this.nome = nome
@@ -27,5 +28,12 @@ export class Monstro {
     setVida(novaVida:number):void{
         this.vida = novaVida
     }
+
+
+    setForca(novaForca:number):void{
+        this.forca = novaForca
+    }
+
 }
+
 
