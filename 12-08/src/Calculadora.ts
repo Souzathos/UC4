@@ -21,7 +21,8 @@ export class Calculadora {
     }
 
     dividir():number {
-        return this.numeroUm / this.numeroDois
+        if(this.numeroDois != 0) {return this.numeroUm/this.numeroDois}
+        return NaN
     }
 }
 
