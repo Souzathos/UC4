@@ -15,8 +15,10 @@ export class Personagem {
 
 
     atacar(monstro:Monstro):void { 
-        monstro.setVida(monstro.getVida() - this.forca) 
-        console.log(`Você deu ${this.forca} de dano. O monstro ${monstro.getNome()} está com ${monstro.getVida()} pontos de vida.`)
+        
+        monstro.dano(this)
+
+    
 
     }
     dano(monstro:Monstro):void {
@@ -25,14 +27,10 @@ export class Personagem {
     }
 
     curar(cura:number):void{
-        if(this.vida + cura < 100){
+        
             this.setVida(this.vida + cura)
             console.log(`Você se curou! sua vida agora é de: ${this.getVida()}`)
-        } else {
-            console.log(`Você não pode usar essa cura! ela irá superar sua vida máxima.`)
-
-            this.vida + cura
-        } 
+        
         
     }
     getNome():string{ 

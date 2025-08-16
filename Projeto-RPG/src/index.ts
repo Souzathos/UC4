@@ -1,10 +1,10 @@
 import { Monstro } from "./Monstro";
 import { Personagem } from "./Personagem";
 
-const personagem:Personagem = new Personagem("Zathos", "Bardo", 100, 50)
-const monstro:Monstro = new Monstro("Belaza", 250, 20)
+const personagem:Personagem = new Personagem("Zathos", "Bardo", 1000, 50)
+const monstro:Monstro = new Monstro("Belaza", 2500, 20)
 
-function luta(personagem:Personagem, monstro:Monstro){
+/*function luta(personagem:Personagem, monstro:Monstro){
     console.log(`Você estava andando pela floresta, e de repente encontrou algo inesperado... \nUm monstro, e logo de cara, você já sabia que era da espécie ${monstro.getNome()}`)
     console.log(`Você então percebeu que não seria uma batalha fácil, mas mesmo assim, o enfrentou cheio de determinação.`)
     personagem.atacar(monstro)
@@ -36,4 +36,45 @@ function luta(personagem:Personagem, monstro:Monstro){
     console.log(`Você ganhou! 🎉​ VITÓRIA! 🎉​`)
 }
 
-luta(personagem, monstro)
+luta(personagem, monstro)*/
+
+
+
+
+
+
+
+import * as readline from 'readline-sync';
+const opcaoNome = readline.question(" Escolhe o nome do personagem: ");
+const opcaoClasse = readline.question("Escolha a classe do persomagem: ");
+console.log(opcaoNome,opcaoClasse)
+
+let controlador = true
+
+while(controlador){
+console.log("=== MENU PRINCIPAL ===");
+console.log("1 - ATAQUE");
+console.log("2 - CURAR");
+console.log("3 - FUGIR");
+
+const opcao = readline.question("Escolha uma opção: ");
+
+switch (opcao) {
+  case "1":
+
+    personagem.dano(monstro)
+    monstro.dano(personagem)
+    
+    break;
+  case "2":
+    
+    personagem.curar(100)
+    break;
+  case "3":
+    console.log("ARREGOU....");
+    controlador = false
+    break;
+  default:
+    console.log("Opção inválida.");
+}
+}

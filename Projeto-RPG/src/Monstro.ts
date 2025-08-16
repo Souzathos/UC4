@@ -13,6 +13,17 @@ export class Monstro {
     }
     
 
+    atacar(personagem:Personagem):void { 
+        
+        personagem.dano(this)     
+        
+       
+    }
+    dano(persomagem:Personagem):void {
+        this.setVida(this.vida - persomagem.getForca())
+        console.log(`Você sofreu ${persomagem.getForca()} pontos de dano. Agora você tem ${this.vida} pontos de vida.`)
+    }
+
     getNome():string{ 
         return this.nome
     }
