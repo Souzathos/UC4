@@ -14,4 +14,20 @@ export class Local {
     mostrarInfo():void {
         console.log(`Aasda`)
     }
+    
+    getNome():string {
+        return this.nome
+    }
+
+    getEndereco():string {
+        return this.endereco
+    }
+    
+    getCidade():string {
+        return this.cidade
+    }
+
+    getTelefone():string{
+        return this.telefone
+    }
 }
