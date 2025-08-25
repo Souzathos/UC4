@@ -5,7 +5,7 @@ import { Local } from "./Local";
 export class SistemaAbrigos{
     private abrigo:Abrigo[] = []
 
-
+    // Método para cadastrar abrigos
     cadastrarAbrigo():void{
         const nome:string = readline.question('Nome: ')
         const endereco:string = readline.question('Endereço: ')
@@ -15,9 +15,10 @@ export class SistemaAbrigos{
         const vagasOcupadas:number = Number(readline.question('Vagas Ocupadas:'))
         const novoAbrigo:Abrigo = new Abrigo(nome, endereco, cidade, telefone, capacidade, vagasOcupadas)
 
+        // Adicionando novo abrigo no array de abrigos
         this.abrigo.push(novoAbrigo)
     }
-
+    // Métodos para listar abrigos
     listarAbrigo():void {
         for(let i = 0; i < this.abrigo.length; i ++) {
             console.log(`--------------------
@@ -31,11 +32,12 @@ export class SistemaAbrigos{
         }
     }
     
-
+    // Método para procurar abrigo pela cidade
     procurarAbrigo():void {    
         const pergunta:string = readline.question('Qual sua cidade? ')
         for(let i = 0; i < this.abrigo.length; i ++){
             if(pergunta === this.abrigo[i].getCidade()){
+                //Verificando se o que foi inserido existe dentro do array pelo metodo "getCidade()"
                 console.log(`--------------------
                 LISTAGEM DE ABRIGOS:
                 --------------------
