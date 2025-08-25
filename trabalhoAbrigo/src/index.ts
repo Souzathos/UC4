@@ -9,8 +9,7 @@ while(controlador) {
     1. Cadastrar abrigo
     2. Listar abrigos
     3. Procurar abrigo
-    4. Sair
-    Escolha uma opção:`)
+    4. Sair`)
 
 
     const opcao = Number(readline.question("Escolha uma opcão: "))
@@ -24,7 +23,7 @@ while(controlador) {
             break
         
         case 3:
-
+        abrigos.procurarAbrigo()
             break
 
         case 4: 

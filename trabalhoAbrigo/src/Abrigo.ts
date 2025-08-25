@@ -9,11 +9,13 @@ export class Abrigo extends Local {
         this.capacidade = capacidade
         this.vagasOcupadas = vagasOcupadas
     }
-    mostrarInfo(): string {
-        return `endere`
+    
+    mostrarInfo():string {
+        return `Nome: ${this.nome} | Endereço: ${this.endereco} | Cidade: ${this.cidade} | Telefone: ${this.telefone} | Capacidade: ${this.getCapacidade()} | Vagas disponíveis: ${this.getVagasDisponiveis()}`
     }
-    ocuparvaga():void {
 
+    ocuparvaga(qtd:number):void {
+        this.vagasOcupadas += qtd
     }
     getVagasDisponiveis():number{
         return this.capacidade - this.vagasOcupadas

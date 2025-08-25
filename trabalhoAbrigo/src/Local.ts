@@ -10,11 +10,11 @@ export class Local {
         this.cidade = cidade
         this.telefone = telefone
     }
-
-    mostrarInfo():void {
-        console.log(`Aasda`)
-    }
     
+    mostrarInfo():string {
+        return `Nome: ${this.nome} | Endereço: ${this.endereco} | Cidade: ${this.cidade} | Telefone: ${this.telefone}`
+    }
+
     getNome():string {
         return this.nome
     }

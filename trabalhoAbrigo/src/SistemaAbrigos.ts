@@ -23,19 +23,27 @@ export class SistemaAbrigos{
             console.log(`--------------------
             LISTAGEM DE ABRIGOS:
             --------------------
-            CÓDIGO |         NOME         |              ENDEREÇO              |   TELEFONE   |  CAPACIDADE | CIDADE
-            ---------------------------------------------------------------------------------------------------------
-            ${i}    |     ${this.abrigo[i].getNome()}              |            ${this.abrigo[i].getEndereco()},                   |         ${this.abrigo[i].getTelefone()},      |     ${this.abrigo[i].getCapacidade()}  |     ${this.abrigo[i].getCidade()}
+            CÓDIGO |         NOME         |              ENDEREÇO              |   TELEFONE   |  CAPACIDADE | CIDADE |      VAGAS DISPONÍVEIS
+            ----------------------------------------------------------------------------------------------------------------------------------------
+            ${i+1}    |     ${this.abrigo[i].getNome()}              |            ${this.abrigo[i].getEndereco()}                  |         ${this.abrigo[i].getTelefone()}     |     ${this.abrigo[i].getCapacidade()}  |     ${this.abrigo[i].getCidade()}    |    ${this.abrigo[i].getVagasDisponiveis()}
             `)
             
         }
     }
     
 
-    procurarAbrigo():void {
+    procurarAbrigo():void {    
         const pergunta:string = readline.question('Qual sua cidade? ')
         for(let i = 0; i < this.abrigo.length; i ++){
-            if(pergunta)
+            if(pergunta === this.abrigo[i].getCidade()){
+                console.log(`--------------------
+                LISTAGEM DE ABRIGOS:
+                --------------------
+                CÓDIGO |         NOME         |              ENDEREÇO              |   TELEFONE   |  CAPACIDADE | CIDADE |      VAGAS DISPONÍVEIS
+                ----------------------------------------------------------------------------------------------------------------------------------------
+                  ${i+1}  | ${this.abrigo[i].getNome()}  |        ${this.abrigo[i].getEndereco()}        |  ${this.abrigo[i].getTelefone()}  |    ${this.abrigo[i].getCapacidade()}  | ${this.abrigo[i].getCidade()}  |  ${this.abrigo[i].getVagasDisponiveis()}
+                ---------------------------------------------------------------------------------------------------------`)
+            }
         }
     }
 }
