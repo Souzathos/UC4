@@ -36,7 +36,7 @@ export class SistemaAbrigos{
     procurarAbrigo():void {    
         const pergunta:string = readline.question('Qual sua cidade? ')
         for(let i = 0; i < this.abrigo.length; i ++){
-            if(pergunta === this.abrigo[i].getCidade()){
+            if(pergunta.toLowerCase().trim() === this.abrigo[i].getCidade().toLowerCase().trim()){
                 //Verificando se o que foi inserido existe dentro do array pelo metodo "getCidade()"
                 console.log(`--------------------
                 LISTAGEM DE ABRIGOS:
