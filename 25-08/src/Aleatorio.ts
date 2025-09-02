@@ -1,7 +1,7 @@
 import * as readline from 'readline-sync';
 
 export class Aleatorio {
-    maxNumero:number = 100
+    maxNumero:number = 10000
 
     gerarNumeroSecreto():number {
         return Math.floor(Math.random() * this.maxNumero) + 1
