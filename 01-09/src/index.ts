@@ -7,12 +7,12 @@ import { Kohona } from "./Konoha";
 import { Retangulo } from "./Retangulo";
 import { Triangulo } from "./Triangulo";
 
-const funcionarioPJ:FuncionarioPJ = new FuncionarioPJ('athos')
-const funcionarioCLT:FuncionarioCLT = new FuncionarioCLT('deivao')
+const funcionarioPJ:FuncionarioPJ = new FuncionarioPJ('athos', 20, 50)
+const funcionarioCLT:FuncionarioCLT = new FuncionarioCLT('decks',2000)
 
 console.log(
-funcionarioCLT.calcularSalario(2000),
-funcionarioPJ.calcularSalario(50, 8)
+funcionarioCLT.calcularSalario(),
+funcionarioPJ.calcularSalario()
 )
 
 const retangulo:Retangulo = new Retangulo()

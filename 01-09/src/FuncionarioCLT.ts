@@ -2,11 +2,13 @@ import { Funcionario } from "./Funcionario";
 
 export class FuncionarioCLT extends Funcionario {
     nome:string
+    salarioFixo:number
 
-    constructor(nome:string){
+    constructor(nome:string, salario:number){
         super(nome)
+        this.salarioFixo = salario
     }
-    calcularSalario(salario:number): number {
-        return salario
+    calcularSalario(): number {
+        return this.salarioFixo
     }
 }
