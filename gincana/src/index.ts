@@ -23,6 +23,22 @@ heroi.concluirMissao(missaoHeroi)
 heroi.status()
  */
 
+
+
+ import { Boleto } from "./Boleto";
+import { Caminhao } from "./Caminhao";
+import { Carga } from "./Carga";
+import { Cartao } from "./Cartao";
+import { IProduto } from "./IProduto";
+import { Loja } from "./Loja";
+import { lojaDeEletronico } from "./LojaDeEletronico";
+
+import { LojaDeRoupa } from "./LojaDeRoupa";
+import { Moto } from "./Moto";
+import { Navio } from "./Navio";
+import { Veiculo } from "./Veiculo";
+
+
 /* EXERCICIO 2
 import { Artigo } from "./Artigo";
 import { Biblioteca } from "./Biblioteca";
@@ -44,4 +60,69 @@ console.log(biblioteca.buscarPorTitulo("forbes"))
  */
 
 // etbilu
+
+/* const lojaDeEletronico:LojaDeEletronico<IProduto> = new LojaDeEletronico("asdas", 15, "2024-05-12")
+const produto:LojaDeEletronico<IProduto> = new LojaDeEletronico("asdas", 15, "2024-05-12")
+
+lojaDeEletronico.adicionar(produto)
+lojaDeEletronico.listar() */
+
+
+      /*   EXERCICIO 3 */
+
+export interface Eletronico extends IProduto{
+    garantia:string
+}
+export interface Roupa extends IProduto {
+    tamanho:string
+}
+/*
+const lojaRoupa = new LojaDeRoupa()
+const lojaEle = new lojaDeEletronico()
+
+
+const camiseta:Roupa = {nome: "nike", tamanho: "P", preco: 155}
+const camiseta2:Roupa = {nome: "adidas", tamanho: "P", preco: 155}
+const celular:Eletronico = {garantia: "2025-07-12", nome: "iphone", preco: 5000}
+const celular2:Eletronico = {garantia: "2025-07-12", nome: "iphone", preco: 5000}
+
+
+lojaRoupa.adicionar(camiseta)
+lojaRoupa.adicionar(camiseta2)
+console.log(lojaRoupa.listar())
+lojaEle.adicionar(celular)
+lojaEle.adicionar(celular2)
+console.log(lojaEle.listar())
+
+console.log(lojaRoupa.calcularTotal())
+console.log(lojaEle.calcularTotal())
+ */
+// zedamanga
+/* import { Pix } from "./Pix"
+
+const cartao:Cartao = new Cartao(5000)
+const boleto:Boleto = new Boleto(200)
+const pix:Pix = new Pix(25)
+
+cartao.pagar(5000)
+cartao.pagar(5000, 12)
+boleto.pagar()
+console.log(`Código aleatório gerado: ${pix.pagar()}`)
+
+ */
+
+
+
+const moto:Moto = new Moto(30)
+const navio:Navio = new Navio(10000)
+const caminhao:Caminhao = new Caminhao(5000)
+const cargaMoto:Carga<Veiculo> = new Carga(moto, 40)
+const cargaNavio:Carga<Veiculo> = new Carga(navio, 100000)
+const cargaCaminhao:Carga<Veiculo> = new Carga(caminhao, 5001)
+
+
+
+moto.transportar(cargaMoto)
+navio.transportar(cargaNavio)
+caminhao.transportar(cargaCaminhao)
 

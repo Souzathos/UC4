@@ -1,18 +1,8 @@
 import { IProduto } from "./IProduto";
 
-export class Loja<T> implements IProduto {
-    produtos: T[]
-    nome: string;
-    preco: number;
-    garantia?: Date;
-    tamanho?:string
-
-    constructor(nome:string, preco:number, produtos:T[]) {
-        this.preco = preco
-        this.produtos = produtos
-        this.nome = nome
-    }
-    
+export class Loja<T extends IProduto>{
+    produtos: T[] = []
+   
 
     adicionar(produto:T):void {
         this.produtos.push(produto)
@@ -22,8 +12,13 @@ export class Loja<T> implements IProduto {
         return this.produtos
     }
 
-    calcularTotal():number {  
-        return 5 + 1
+
+    calcularTotal():number {
+        let soma = 0  
+        this.produtos.forEach(produto => {
+            soma += produto.preco
+            
+        }); return soma
     }
 }
 
